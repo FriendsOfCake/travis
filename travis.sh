@@ -7,8 +7,16 @@ cd ..
 git clone git://github.com/cakephp/cakephp.git --branch $CAKE_VERSION --depth 1
 cd cakephp/app
 
+cp ../../$REPO_NAME/composer.json ./composer.json;
+
+composer install --dev --no-interaction --prefer-source
+
+for dep in $REQUIRE;
+do
+    composer require --dev --no-interaction --prefer-source $dep;
+done;
+
 if [ "$COVERALLS" = '1' ]; then composer require --dev satooshi/php-coveralls:dev-master; fi
-if [ "$COVERALLS" = '1' ]; then composer install --dev --no-interaction --prefer-source; fi
 
 if [ "$PHPCS" = '1' ]; then pear channel-discover pear.cakephp.org; fi
 if [ "$PHPCS" = '1' ]; then pear install --alldeps cakephp/CakePHP_CodeSniffer; fi
@@ -78,9 +86,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <phpunit>
 <filter>
     <whitelist>
-        <directory suffix=\".php\">plugins/$PLUGIN_NAME</directory>
+        <directory suffix=\".php\">Plugin/$PLUGIN_NAME</directory>
         <exclude>
-            <directory suffix=\".php\">plugins/$PLUGIN_NAME/Test</directory>
+            <directory suffix=\".php\">Plugin/$PLUGIN_NAME/Test</directory>
         </exclude>
     </whitelist>
 </filter>
@@ -90,5 +98,3 @@ echo "# for php-coveralls
 src_dir: Plugin/$PLUGIN_NAME
 coverage_clover: build/logs/clover.xml
 json_path: build/logs/coveralls-upload.json" > .coveralls.yml
-
-if [ "$COMPOSER" == "1" ]; then cp Plugin/$PLUGIN_NAME/composer.json ./composer.json; composer install --dev; fi
