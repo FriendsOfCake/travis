@@ -90,3 +90,5 @@ echo "# for php-coveralls
 src_dir: Plugin/$PLUGIN_NAME
 coverage_clover: build/logs/clover.xml
 json_path: build/logs/coveralls-upload.json" > .coveralls.yml
+
+if [ "$COMPOSER" == "1" ]; then cp Plugin/$PLUGIN_NAME/composer.json ./composer.json; composer install --dev; fi
