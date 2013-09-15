@@ -72,7 +72,7 @@ echo "<?php
     }
 }" > Config/database.php
 
-echo "CakePlugin::loadAll();\n" >> Config/bootstrap.php
+echo "CakePlugin::loadAll();" >> Config/bootstrap.php
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <phpunit>
