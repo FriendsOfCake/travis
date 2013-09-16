@@ -26,3 +26,31 @@ More info: http://about.travis-ci.org/docs/user/languages/php/
 
 - Your plugin should have AllPluginNameTest.php to run all your plugin tests
 - Your plugin should have a composer.json (FoC requirement already)
+
+### Example file for AllExampleTest.php
+
+This is what a file would look like for the Example plugin
+
+```php
+<?php
+/**
+ * All tests for this plugin
+ *
+ */
+class AllExampleTest extends CakeTestCase {
+
+/**
+ * Suite define the tests for this suite
+ *
+ * @return CakeTestSuite
+ */
+	public static function suite() {
+		$suite = new CakeTestSuite('All Example tests');
+
+		$path = CakePlugin::path('Example') . 'Test' . DS . 'Case' . DS;
+		$suite->addTestDirectoryRecursive($path);
+
+		return $suite;
+	}
+}
+```
