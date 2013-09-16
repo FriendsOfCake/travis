@@ -29,7 +29,7 @@ More info: http://about.travis-ci.org/docs/user/languages/php/
 
 ### Example file for AllExampleTest.php
 
-This is what a file would look like for the Example plugin
+This is what a file would look like for the Example plugin (in `Test/Case/All${plugin}Test.php`)
 
 ```php
 <?php
