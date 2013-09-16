@@ -59,7 +59,7 @@ class AllExampleTest extends CakeTestCase {
 
 This is what the composer.json file would look like for Example plugin
 
-```
+```json
 {
     "name": "friendsofcake/example",
     "type": "cakephp-plugin",
