@@ -54,3 +54,51 @@ class AllExampleTest extends CakeTestCase {
 	}
 }
 ```
+
+### Example file for composer.json
+
+This is what the composer.json file would look like for Example plugin
+
+```
+{
+    "name": "friendsofcake/example",
+    "type": "cakephp-plugin",
+    "description": "Example plugin for travis",
+    "keywords":[
+        "cakephp",
+        "example",
+        "travis"
+    ],
+    "homepage": "http://github.com/FriendsOfCake/example",
+    "authors":[
+        {
+            "name":"",
+            "role":"Author"
+        }
+    ],
+    "license": "MIT",
+    "support":{
+        "source":"https://github.com/FriendsOfCake/Example",
+        "issues":"https://github.com/FriendsOfCake/Example/issues",
+        "irc":"irc://irc.freenode.org/friendsofcake"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "installer-name": "Example"
+    }
+}
+```
+
+You can also create a composer.json file by running the following command: `composer init` in the root of the plugin
+
+## What does it do
+
+Using this project for your CakePHP plugin will do the following:
+ - Run the unit tests on travis-ci, for the defined matrix.
+ - Run phpcs (PHP_CodeSniffer) on your plugin code to check for coding standards violations using the CakePHP standard
+ - Uploads code coverage reports to coveralls.io.
+
+Make sure you have the travis webhook enabled in github for your plugin, and also add your repo to coveralls.io
