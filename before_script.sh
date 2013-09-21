@@ -5,9 +5,13 @@ if [ "$DB" = "pgsql" ]; then psql -c 'CREATE DATABASE cakephp_test;' -U postgres
 
 chmod -R 777 tmp
 
-cp ../../$REPO_NAME/composer.json ./composer.json;
-
-composer install --dev --no-interaction --prefer-source
+COMPOSER_JSON="../../${REPO_NAME}/composer.json"
+if [ ! -f "$COMPOSER_JSON" ]; then
+    cp ../../$REPO_NAME/composer.json ./composer.json;
+    composer install --dev --no-interaction --prefer-source
+else
+    echo "Missing composer.json at path ${COMPOSER_JSON}"
+fi
 
 for dep in $REQUIRE;
 do
