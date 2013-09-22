@@ -11,7 +11,6 @@ satisfying the requirements.
 - Copy the `.travis.example.yml` file to the root of your project and rename it
 to `.travis.yml`
 - Update in the global env variables in .travis.yml
-  - Change `REPO_NAME` to match the github project name, for example `REPO_NAME=example`
   - Change `PLUGIN_NAME` to the camelcased name for a CakePHP plugin `PLUGIN_NAME=Example`
   - Optional: If your need some additional dependencies specific for testing only,
 you can add them in `REQUIRE`. The dependencies should be space separate and in
