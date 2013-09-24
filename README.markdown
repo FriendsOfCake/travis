@@ -46,7 +46,7 @@ The following variables can be omitted and the script will attempt to guess thei
 The script will:
 
 - Retrieve configuration specified
-- Template out files for submission to the **FriendsOfCake** organization, http://travis-ci.com, and http://packagist.org
+- Template out files for submission to the **FriendsOfCake** organization, http://travis-ci.org, and http://packagist.org
 - Template out othe rmissing fules, such as a `README.markdown` and an `AllPluginNameTest.php`
 - Write a notice for signing up to http://coveralls.io
 
