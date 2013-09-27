@@ -58,8 +58,6 @@ COMPOSER_JSON="$(pwd)/Plugin/$PLUGIN_NAME/composer.json"
 if [ -f "$COMPOSER_JSON" ]; then
     cp $COMPOSER_JSON ./composer.json;
     composer install --dev --no-interaction --prefer-source
-else
-    echo "Missing composer.json at path ${COMPOSER_JSON}"
 fi
 
 for dep in $REQUIRE; do
