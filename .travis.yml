@@ -25,10 +25,10 @@ matrix:
         - PHPCS=1
     - php: 5.4
       env:
-        - FOC_VALIDATE=1
+        - FOC_VALIDATE=1 FOC_TRAVIS=1
 
 before_script:
-  - git clone https://github.com/FriendsOfCake/travis.git --depth 1 ../travis
+  - cp -R example_plugin ../example_plugin && cd ../example_plugin
   - ../travis/before_script.sh
 
 script:
