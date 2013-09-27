@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/FriendsOfCake/travis.png?branch=master)](https://travis-ci.org/FriendsOfCake/travis)
-[![Coverage Status](https://coveralls.io/repos/FriendsOfCake/travis/badge.png?branch=master)](https://coveralls.io/r/FriendsOfCake/travis?branch=master)
 
 # Easy travis setup for CakePHP plugins
 
