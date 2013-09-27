@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/FriendsOfCake/travis.png?branch=master)](https://travis-ci.org/FriendsOfCake/travis)
+[![Coverage Status](https://coveralls.io/repos/FriendsOfCake/travis/badge.png?branch=master)](https://coveralls.io/r/FriendsOfCake/travis?branch=master)
+
 # Easy travis setup for CakePHP plugins
 
 This repository helps easy travis integration for CakePHP plugins, primarily focused on FriendsOfCake projects, but can be used within any plugin when satisfying the requirements.
@@ -54,9 +57,8 @@ Please note that you can also use this for your own projects, and that you are f
 
 ## Manual Instructions
 
-- Copy the `templates/.travis.example.yml` file to the root of your project and rename it to `.travis.yml`
+- Copy the `templates/.travis.yml` file to the root of your project and rename it to `.travis.yml`
 - Update in the global env variables in .travis.yml
-  - Change `REPO_NAME` to match the github project name, for example `REPO_NAME=example`
   - Change `PLUGIN_NAME` to the camelcased name for a CakePHP plugin `PLUGIN_NAME=Example`
   - Optional: If your need some additional dependencies specific for testing only, you can add them in `REQUIRE`. The dependencies should be space separate and in composer format. Example: `REQUIRE="cakephp/debug_kit:2.2.* cakedc/search:dev-develop"`
 - Optional: Further you could change build matrixes if needed. For instance when your tests also require other or no databases, or more or other CakePHP versions. By default database.php supports using mysql, postgres and sqlite, so you can add those to the matrix if required. For more info, see this [link](http://about.travis-ci.org/docs/user/languages/php/)
