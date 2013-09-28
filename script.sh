@@ -16,7 +16,11 @@ elif [ -z "$PHPCS" -a -z "$FOC_VALIDATE" ]; then
 fi
 
 if [ "$PHPCS" == 1 ]; then
-    phpcs -p --extensions=php --standard=CakePHP ./Plugin/$PLUGIN_NAME
+    ARGS="-p --extensions=php --standard=CakePHP ./Plugin/$PLUGIN_NAME";
+    if [ -n "$PHPCS_IGNORE" ]; then
+        ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
+    fi
+    eval "phpcs" $ARGS
     PHPCS_EXIT_CODE="$?"
 fi
 
