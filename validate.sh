@@ -34,14 +34,6 @@ if [ ! -f ".travis.yml" ]; then
   echo "Missing .travis.yml"
   success=false
 else
-  if ! grep -q REPO_NAME ".travis.yml"; then
-    echo "Missing REPO_NAME global environment variable in yml file"
-    success=false
-  elif grep -q REPO_NAME=example_plugin ".travis.yml"; then
-    echo "REPO_NAME should be set to your repository's name, not example_plugin"
-    success=false
-  fi
-
   if ! grep -q PLUGIN_NAME ".travis.yml"; then
     echo "Missing PLUGIN_NAME global environment variable in yml file"
     success=false
