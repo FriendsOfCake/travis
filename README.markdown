@@ -49,7 +49,7 @@ The script will:
 
 - Retrieve configuration specified
 - Template out files for submission to the **FriendsOfCake** organization, http://travis-ci.org, and http://packagist.org
-- Template out othe rmissing fules, such as a `README.markdown` and an `AllPluginNameTest.php`
+- Template out other missing files, such as a `README.markdown` and an `AllPluginNameTest.php`
 - Write a notice for signing up to http://coveralls.io
 
 Please note that you can also use this for your own projects, and that you are free to update any of the files that have been templated out.
