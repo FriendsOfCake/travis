@@ -73,6 +73,11 @@ phpenv rehash
 
 set +H
 
+COMPOSER_AUTOLOAD="$(pwd)/Vendor/autoload.php"
+if [ -f "$COMPOSER_AUTOLOAD" ]; then
+    echo "App::import('Vendor', array('file' => 'autoload'));" >> Config/bootstrap.php
+fi
+
 echo "CakePlugin::loadAll();" >> Config/bootstrap.php
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
