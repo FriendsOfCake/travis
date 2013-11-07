@@ -21,7 +21,7 @@ Add the plugin to your project's `composer.json` - something like this:
     }
   }
 
-Because this plugin has the type `cakephp-plugin` set in it's own `composer.json`, composer knows to install it inside your `/Plugins` directory, rather than in the usual vendors file. It is recommended that you add `/Plugins/PLUGIN_NAME` to your .gitignore file. (Why? [read this](http://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).)
+Because this plugin has the type `cakephp-plugin` set in its own `composer.json`, Composer will install it inside your `/Plugins` directory, rather than in the usual vendors file. It is recommended that you add `/Plugins/PLUGIN_NAME` to your .gitignore file. (Why? [read this](http://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).)
 
 _[Manual]_
 
@@ -46,7 +46,7 @@ In your `Plugin` directory type:
 
 ### Enable plugin
 
-In 2.0 you need to enable the plugin your `app/Config/bootstrap.php` file:
+In 2.0 you need to enable the plugin in your `app/Config/bootstrap.php` file:
 
   CakePlugin::load('PLUGIN_NAME');
 
