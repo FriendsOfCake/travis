@@ -77,6 +77,10 @@ Should you wish to manually setup a plugin, templates for the following files ar
 
 Using the `setup.sh` script as described above will use these files as templates.
 
+## Composer
+
+`before_scripts.sh` will check for `composer.json` in your plugin and load all dependencies if it finds one. It also adds loading of the autoloader to `bootstrap.php` and uses the `COMPOSER_VENDOR` environment variable for that. By default it is set to `Vendor`, so if yours is different, `vendor` for example, be sure to update `.travis.yml` accordingly. 
+
 ## Plugin Validation
 
 Should you wish to validate a plugin, you can use the `validate.sh` shell script as follows:
