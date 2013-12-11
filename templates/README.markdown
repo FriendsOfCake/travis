@@ -15,11 +15,13 @@ _[Using [Composer](http://getcomposer.org/)]_
 
 Add the plugin to your project's `composer.json` - something like this:
 
+```composer
   {
     "require": {
       "GITHUB_USERNAME/REPO_NAME": "dev-master"
     }
   }
+```
 
 Because this plugin has the type `cakephp-plugin` set in its own `composer.json`, Composer will install it inside your `/Plugins` directory, rather than in the usual vendors file. It is recommended that you add `/Plugins/PLUGIN_NAME` to your .gitignore file. (Why? [read this](http://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).)
 
@@ -34,21 +36,23 @@ _[GIT Submodule]_
 
 In your app directory type:
 
+```bash
   git submodule add -b master git://github.com/GITHUB_USERNAME/REPO_NAME.git Plugin/PLUGIN_NAME
   git submodule init
   git submodule update
+```
 
 _[GIT Clone]_
 
 In your `Plugin` directory type:
 
-  git clone -b master git://github.com/GITHUB_USERNAME/REPO_NAME.git PLUGIN_NAME
+    git clone -b master git://github.com/GITHUB_USERNAME/REPO_NAME.git PLUGIN_NAME
 
 ### Enable plugin
 
 In 2.0 you need to enable the plugin in your `app/Config/bootstrap.php` file:
 
-  CakePlugin::load('PLUGIN_NAME');
+    CakePlugin::load('PLUGIN_NAME');
 
 If you are already using `CakePlugin::loadAll();`, then this is not necessary.
 
