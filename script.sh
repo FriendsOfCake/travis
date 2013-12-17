@@ -20,7 +20,7 @@ if [ "$PHPCS" == 1 ]; then
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
-    if [ -n "$PHPCS_NO_WARNINGS" ]; then
+    if [ "$PHPCS_NO_WARNINGS" == 1 ]; then
         ARGS="$ARGS -n"
     fi
     eval "phpcs" $ARGS
