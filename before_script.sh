@@ -79,7 +79,7 @@ fi
 
 COMPOSER_AUTOLOAD="$(pwd)/$COMPOSER_VENDOR/autoload.php"
 if [ -f "$COMPOSER_AUTOLOAD" ]; then
-    echo "include '$COMPOSER_VENDOR';" >> Config/bootstrap.php
+    echo "include '$COMPOSER_AUTOLOAD';" >> Config/bootstrap.php
 fi
 
 echo "CakePlugin::loadAll();" >> Config/bootstrap.php
