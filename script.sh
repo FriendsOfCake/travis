@@ -20,6 +20,9 @@ if [ "$PHPCS" == 1 ]; then
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
+    if [ "$PHPCS_NO_WARNINGS" == 1 ]; then
+        ARGS="$ARGS -n"
+    fi
     eval "phpcs" $ARGS
     PHPCS_EXIT_CODE="$?"
 fi
