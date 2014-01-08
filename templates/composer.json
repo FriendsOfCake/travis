@@ -12,7 +12,7 @@
     {
       "name": "YOUR_NAME",
       "role": "Maintainer"
-    },
+    }
   ],
   "require": {
     "composer/installers": "*"
