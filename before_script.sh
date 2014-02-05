@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$PHPCS" = '1' ]; then
+	pear channel-discover pear.cakephp.org
+	pear install --alldeps cakephp/CakePHP_CodeSniffer
+	phpenv rehash
+	exit 0
+fi
+
 #
 # Returns the latest reference (either a branch or tag) for any given
 # MAJOR.MINOR semantic versioning.
@@ -65,9 +72,6 @@ for dep in $REQUIRE; do
 done
 
 if [ "$COVERALLS" = '1' ]; then composer require --dev satooshi/php-coveralls:dev-master; fi
-
-if [ "$PHPCS" = '1' ]; then pear channel-discover pear.cakephp.org; fi
-if [ "$PHPCS" = '1' ]; then pear install --alldeps cakephp/CakePHP_CodeSniffer; fi
 
 phpenv rehash
 
