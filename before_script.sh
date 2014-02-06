@@ -77,6 +77,15 @@ phpenv rehash
 
 set +H
 
+if [ -z "$COMPOSER_VENDOR" ]; then
+    COMPOSER_VENDOR="vendor"
+fi
+
+COMPOSER_AUTOLOAD="$(pwd)/$COMPOSER_VENDOR/autoload.php"
+if [ -f "$COMPOSER_AUTOLOAD" ]; then
+    echo "include '$COMPOSER_AUTOLOAD';" >> Config/bootstrap.php
+fi
+
 echo "CakePlugin::loadAll();" >> Config/bootstrap.php
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>

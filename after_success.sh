@@ -5,6 +5,10 @@ if [ -d ../cakephp/app ]; then
 	cd ../cakephp/app
 fi
 
+if [ -z "$COMPOSER_VENDOR" ]; then
+    COMPOSER_VENDOR="vendor"
+fi
+
 if [ "$COVERALLS" = '1' ]; then
-    php vendor/bin/coveralls -c .coveralls.yml -v;
+    php $COMPOSER_VENDOR/bin/coveralls -c .coveralls.yml -v;
 fi

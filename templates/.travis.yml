@@ -8,6 +8,7 @@ php:
 env:
   global:
     - PLUGIN_NAME=Example
+    - COMPOSER_VENDOR=Vendor
     - REQUIRE=""
 
   matrix:
