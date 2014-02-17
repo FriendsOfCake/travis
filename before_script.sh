@@ -77,7 +77,7 @@ phpenv rehash
 
 set +H
 
-echo "CakePlugin::loadAll();" >> Config/bootstrap.php
+echo "CakePlugin::loadAll(array('bootstrap' => true, 'routes' => true, 'ignoreMissing' => true));" >> Config/bootstrap.php
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <phpunit>
