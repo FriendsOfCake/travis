@@ -37,7 +37,7 @@ latest_ref() {
 	fi
 }
 
-if [ "$DB" = "mysql" ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi
+if [ "$DB" = "mysql" ]; then mysql -e 'create database cakephp_test CHARACTER SET utf8 COLLATE utf8_general_ci;' fi
 if [ "$DB" = "pgsql" ]; then psql -c 'CREATE DATABASE cakephp_test;' -U postgres; fi
 
 REPO_PATH=$(pwd)
