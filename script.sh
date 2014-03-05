@@ -5,6 +5,9 @@ if [ "$PHPCS" == 1 ]; then
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
+    if [ -n "$PHPCS_ARGS" ]; then
+        ARGS="$PHPCS_ARGS"
+    fi
     eval "phpcs" $ARGS
     exit $?
 fi

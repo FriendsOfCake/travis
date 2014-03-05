@@ -59,8 +59,9 @@ Please note that you can also use this for your own projects, and that you are f
 - Copy the `templates/.travis.yml` file to the root of your project and rename it to `.travis.yml`
 - Update in the global env variables in .travis.yml
   - Change `PLUGIN_NAME` to the camelcased name for a CakePHP plugin `PLUGIN_NAME=Example`
-  - Optional: If your need some additional dependencies specific for testing only, you can add them in `REQUIRE`. The dependencies should be space separate and in composer format. Example: `REQUIRE="cakephp/debug_kit:2.2.* cakedc/search:dev-develop"`
+  - Optional: If you need some additional dependencies specific for testing only, you can add them in `REQUIRE`. The dependencies should be space separate and in composer format. Example: `REQUIRE="cakephp/debug_kit:2.2.* cakedc/search:dev-develop"`
 - Optional: Further you could change build matrixes if needed. For instance when your tests also require other or no databases, or more or other CakePHP versions. By default database.php supports using mysql, postgres and sqlite, so you can add those to the matrix if required. For more info, see this [link](http://about.travis-ci.org/docs/user/languages/php/)
+- Optional: If you need to use custom arguments for PHPCS (e.g. -n), you can add them in `PHPCS_ARGS`. If `PHPCS_ARGS` is specified it will override the defaults of `-p --extensions=php --standard=CakePHP ./Plugin/$PLUGIN_NAME`.
 
 ### Templates
 
