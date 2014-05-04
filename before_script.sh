@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ '$TRAVIS_PHP_VERSION' == '5.2' ]; then
-    pear install phpunit/PHPUnit
-fi
-
-
 if [ "$PHPCS" = '1' ]; then
     pear channel-discover pear.cakephp.org
     pear install --alldeps cakephp/CakePHP_CodeSniffer
