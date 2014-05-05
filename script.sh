@@ -14,17 +14,25 @@ fi
 
 # Move to APP
 if [ -d ../cakephp/app ]; then
-	cd ../cakephp/app
+    cd ../cakephp/app
 fi
 
 TEST_EXIT_CODE=0
 VALIDATE_EXIT_CODE=0
 
 if [ "$COVERALLS" == 1 ]; then
-    ./Console/cake test $PLUGIN_NAME All$PLUGIN_NAME --stderr --coverage-clover build/logs/clover.xml
+    if [ "$CAKE_VERSION" == "2.0" ]; then
+        ./Console/cake testsuite $PLUGIN_NAME All$PLUGIN_NAME --stderr --coverage-clover build/logs/clover.xml
+    else
+        ./Console/cake test $PLUGIN_NAME All$PLUGIN_NAME --stderr --coverage-clover build/logs/clover.xml
+    fi
     TEST_EXIT_CODE="$?"
 elif [ -z "$FOC_VALIDATE" ]; then
-    ./Console/cake test $PLUGIN_NAME All$PLUGIN_NAME --stderr
+    if [ "$CAKE_VERSION" == "2.0" ]; then
+        ./Console/cake testsuite $PLUGIN_NAME All$PLUGIN_NAME --stderr
+    else
+        ./Console/cake test $PLUGIN_NAME All$PLUGIN_NAME --stderr
+    fi
     TEST_EXIT_CODE="$?"
 fi
 
