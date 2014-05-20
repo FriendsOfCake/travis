@@ -73,7 +73,9 @@ done
 
 if [ "$COVERALLS" = '1' ]; then
 	composer require --dev satooshi/php-coveralls:dev-master
-else
+fi
+
+if [ "$PHPCS" != '1' ]; then
 	composer global require 'phpunit/phpunit=3.7.33'
 	ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
 fi
