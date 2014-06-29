@@ -84,7 +84,14 @@ for dep in $REQUIRE; do
     composer require --dev --no-interaction --prefer-source $dep;
 done
 
-if [ "$COVERALLS" = '1' ]; then composer require --dev satooshi/php-coveralls:dev-master; fi
+if [ "$COVERALLS" = '1' ]; then
+	composer require --dev satooshi/php-coveralls:dev-master
+fi
+
+if [ "$PHPCS" != '1' ]; then
+	composer global require 'phpunit/phpunit=3.7.33'
+	ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
+fi
 
 phpenv rehash
 
