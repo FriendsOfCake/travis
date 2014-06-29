@@ -97,6 +97,12 @@ phpenv rehash
 
 set +H
 
+if [ "$PHPCS" != 1 ]; then
+    echo "
+    require_once APP . DS . 'vendor' . DS . 'phpunit' . DS . 'phpunit' . DS . 'PHPUnit' . DS . 'Autoload.php';
+    " >> Config/bootstrap.php;
+fi
+
 echo "CakePlugin::loadAll(array(array('bootstrap' => true, 'routes' => true, 'ignoreMissing' => true)));" >> Config/bootstrap.php
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
