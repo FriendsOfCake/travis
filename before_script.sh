@@ -38,6 +38,7 @@ latest_ref() {
 }
 
 if [ "$DB" = "mysql" ]; then
+    echo "Using Mysql";
     if [[ -z "$MYSQL_CREATE_DB" ]]; then
         mysql -e 'CREATE DATABASE cakephp_test;';
     else
@@ -46,6 +47,7 @@ if [ "$DB" = "mysql" ]; then
 fi
 
 if [ "$DB" = "pgsql" ]; then
+    echo "Using Postgres";
     if [[ -z "PGSQL_CREATE_DB" ]]; then
         psql -c 'CREATE DATABASE cakephp_test;' -U postgres;
         psql -c 'CREATE SCHEMA default;' -U postgres;
