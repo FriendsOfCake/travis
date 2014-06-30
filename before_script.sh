@@ -48,7 +48,7 @@ fi
 
 if [ "$DB" = "pgsql" ]; then
     echo "Using Postgres";
-    if [[ -z "PGSQL_CREATE_DB" ]]; then
+    if [[ -z "$PGSQL_CREATE_DB" ]]; then
         psql -c 'CREATE DATABASE cakephp_test;' -U postgres;
         psql -c 'CREATE SCHEMA default;' -U postgres;
         psql -c 'CREATE SCHEMA test;' -U postgres;
