@@ -2,7 +2,7 @@
 
 if [ "$PHPCS" = '1' ]; then
 	pear channel-discover pear.cakephp.org
-	pear install cakephp/CakePHP_CodeSniffer
+	pear install --alldeps cakephp/CakePHP_CodeSniffer
 	phpenv rehash
 	exit 0
 fi
