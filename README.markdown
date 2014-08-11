@@ -18,39 +18,23 @@ Make sure you have the travis webhook enabled in github for your plugin, and als
 
 We have provided a `setup.sh` shell script that should allow you to ensure conformity with the FriendsOfCake plugin standard. It should bypass a large part of the requirements mentioned here, as well as setup special files for later use. To use:
 
-	# example for Crud plugin
+	cd path/to/your/repo
 
-	cd path/to/app
+	# Clone this repo
+	git clone https://github.com/FriendsOfCake/travis.git
 
-	# Clone the repo down
-	git clone vendor/travis
-
-	# Export some environment variables for running the setup script
-	export COPYRIGHT_YEAR=2011
-	export GITHUB_USERNAME="friendsofcake"
-	export PLUGIN_PATH="Plugin/YourPlugin"
-	export PLUGIN_NAME="YourPlugin"
-	export REPO_NAME="your-plugin"
-	export YOUR_NAME="Christian Winthers"
+	# Optionally set the plugin name, otherwise the current directory is used
+	# export PLUGIN_NAME="YourPlugin"
 
 	# Run the setup
-	./vendor/travis/setup.sh
+	travis/setup.sh
 
 	# Remove this repository when you are done
-	rm -rf vendor/travis
-
-The following variables can be omitted and the script will attempt to guess their values:
-
-- `GITHUB_USERNAME`: Retrieved from `git config --get github.user`
-- `REPO_NAME`: Retrieved from `git remote -v`
-- `YOUR_NAME`: Retrieved from `git config --get user.name'`
+	rm -rf travis
 
 The script will:
 
 - Retrieve configuration specified
-- Template out files for submission to the **FriendsOfCake** organization, http://travis-ci.org, and http://packagist.org
-- Template out other missing files, such as a `README.markdown` and an `AllPluginNameTest.php`
-- Write a notice for signing up to http://coveralls.io
 
 Please note that you can also use this for your own projects, and that you are free to update any of the files that have been templated out.
 
@@ -62,64 +46,3 @@ Please note that you can also use this for your own projects, and that you are f
   - Optional: If you need some additional dependencies specific for testing only, you can add them in `REQUIRE`. The dependencies should be space separate and in composer format. Example: `REQUIRE="cakephp/debug_kit:2.2.* cakedc/search:dev-develop"`
 - Optional: Further you could change build matrixes if needed. For instance when your tests also require other or no databases, or more or other CakePHP versions. By default database.php supports using mysql, postgres and sqlite, so you can add those to the matrix if required. For more info, see this [link](http://about.travis-ci.org/docs/user/languages/php/)
 - Optional: If you need to use custom arguments for PHPCS (e.g. -n), you can add them in `PHPCS_ARGS`. If `PHPCS_ARGS` is specified it will override the defaults of `-p --extensions=php --standard=CakePHP ./Plugin/$PLUGIN_NAME`.
-
-### Templates
-
-Should you wish to manually setup a plugin, templates for the following files are available in the `templates` directory:
-
-- `.editorconfig`
-- `.semver`
-- `.travis.yml`
-- `.AllPluginNameTest.php`
-- `composer.json`
-- `CONTRIBUTING.markdown`
-- `LICENSE.txt`
-- `README.markdown`
-
-Using the `setup.sh` script as described above will use these files as templates.
-
-## Plugin Validation
-
-Should you wish to validate a plugin, you can use the `validate.sh` shell script as follows:
-
-	# example for Crud plugin
-
-	cd path/to/app
-
-	# Clone the repo down
-	git clone vendor/travis
-
-	# Export some environment variables for running the validate script
-	export PLUGIN_PATH="Plugin/YourPlugin"
-
-	# Run the setup
-	./vendor/travis/validate.sh
-
-	# Remove this repository when you are done
-	rm -rf vendor/travis
-
-Please note that this script will not fix any errors. To do so, please use the `setup.sh` shell script.
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2013 FriendsOfCake
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
