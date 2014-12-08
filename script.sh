@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$PHPCS" == 1 ]; then
-    ARGS="-p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP .";
+    ARGS="-p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP --ignore=vendor/ .";
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
