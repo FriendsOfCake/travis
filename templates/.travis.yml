@@ -20,7 +20,7 @@ env:
 matrix:
   fast_finish: true
 
- include:
+  include:
   - php: 5.4
     env: PHPCS=1 DEFAULT=0
 
