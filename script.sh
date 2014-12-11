@@ -1,14 +1,14 @@
 #!/bin/bash
 
 if [ "$PHPCS" == 1 ]; then
-    ARGS="-p --extensions=php --standard=CakePHP .";
+    ARGS="-p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP --ignore=vendor/ .";
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
     if [ -n "$PHPCS_ARGS" ]; then
         ARGS="$PHPCS_ARGS"
     fi
-    eval "phpcs" $ARGS
+    eval "vendor/bin/phpcs" $ARGS
     exit $?
 fi
 
