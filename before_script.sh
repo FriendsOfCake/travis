@@ -1,5 +1,7 @@
 #!/bin/bash
 
+composer self-update
+
 if [ "$PHPCS" = '1' ]; then
 	composer require 'cakephp/cakephp-codesniffer:*';
 	exit 0
