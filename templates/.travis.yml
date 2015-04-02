@@ -20,6 +20,8 @@ matrix:
   include:
     - php: 5.4
       env:
+        - DB=mysql
+        - CAKE_VERSION=2.4
         - COVERALLS=1
     - php: 5.4
       env:
