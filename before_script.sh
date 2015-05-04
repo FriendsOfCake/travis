@@ -93,6 +93,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <directory suffix=\".php\">Plugin/$PLUGIN_NAME</directory>
         <exclude>
             <directory suffix=\".php\">Plugin/$PLUGIN_NAME/Test</directory>
+            <directory suffix=\".php\">Plugin/$PLUGIN_NAME/vendor</directory>
         </exclude>
     </whitelist>
 </filter>
