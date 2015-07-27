@@ -64,15 +64,15 @@ mv $SELF_PATH/database.php Config/database.php
 COMPOSER_JSON="$(pwd)/Plugin/$PLUGIN_NAME/composer.json"
 if [ -f "$COMPOSER_JSON" ]; then
     cp $COMPOSER_JSON ./composer.json;
-    composer install --dev --no-interaction --prefer-source
+    composer install --no-interaction --prefer-source
 fi
 
 for dep in $REQUIRE; do
-    composer require --dev --no-interaction --prefer-source $dep;
+    composer require --no-interaction --prefer-source $dep;
 done
 
 if [ "$COVERALLS" = '1' ]; then
-	composer require --dev satooshi/php-coveralls:dev-master
+	composer require satooshi/php-coveralls:dev-master
 fi
 
 if [ "$PHPCS" != '1' ]; then
