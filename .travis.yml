@@ -19,13 +19,13 @@ env:
 
 matrix:
   include:
-    - php: 5.4
+      php: 5.4
       env:
         - COVERALLS=1
-    - php: 5.4
+      php: 5.4
       env:
         - PHPCS=1
-    - php: 5.4
+      php: 5.4
       env:
         - FOC_VALIDATE=1 FOC_TRAVIS=1
 
