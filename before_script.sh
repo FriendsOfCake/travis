@@ -76,7 +76,7 @@ if [ "$COVERALLS" = '1' ]; then
 fi
 
 if [ "$PHPCS" != '1' ]; then
-	composer global require 'phpunit/phpunit=3.7.33'
+	composer global require 'phpunit/phpunit=3.7.38'
 	ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
 fi
 
