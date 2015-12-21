@@ -44,7 +44,9 @@ REPO_PATH=$(pwd)
 SELF_PATH=$(cd "$(dirname "$0")"; pwd)
 
 # Clone CakePHP repository
-CAKE_REF=$(latest_ref)
+if [ -z "$CAKE_REF" ]; then
+	CAKE_REF=$(latest_ref)
+fi
 if [ -z "$CAKE_REF" ]; then
 	echo "Found no valid ref to match with version $CAKE_VERSION" >&2
 	exit 1
