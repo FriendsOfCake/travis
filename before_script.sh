@@ -102,6 +102,5 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 </phpunit>" > phpunit.xml
 
 echo "# for php-coveralls
-src_dir: Plugin/$PLUGIN_NAME
 coverage_clover: build/logs/clover.xml
 json_path: build/logs/coveralls-upload.json" > .coveralls.yml
