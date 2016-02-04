@@ -11,9 +11,9 @@ Using this project for your CakePHP plugin will do the following:
 
  - Run the unit tests on travis-ci, for the defined matrix.
  - Run phpcs (PHP_CodeSniffer) on your plugin code to check for coding standards violations using the CakePHP standard
- - Uploads code coverage reports to coveralls.io.
+ - Uploads code coverage reports to codecov.io.
 
-Make sure you have the travis webhook enabled in github for your plugin, and also add your repo to coveralls.io
+Make sure you have the travis webhook enabled in github for your plugin, and also add your repo to codecov.io
 
 ## Quick Install
 

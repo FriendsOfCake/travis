@@ -5,6 +5,7 @@ if [ -d ../cakephp/app ]; then
 	cd ../cakephp/app
 fi
 
-if [ "$COVERALLS" = '1' ]; then
-    php vendor/bin/coveralls -c .coveralls.yml -v;
+if [ "$COVERAGE" = '1' ]; then
+	sh -c "if [ '$CODECOVERAGE' = '1' ]; then wget -O codecov.sh https://codecov.io/bash; fi"
+	sh -c "if [ '$CODECOVERAGE' = '1' ]; then bash codecov.sh; fi"
 fi
