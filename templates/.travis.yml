@@ -21,7 +21,7 @@ matrix:
       env:
         - DB=mysql
         - CAKE_VERSION=2.7
-        - COVERAGE=1
+        - CODECOVERAGE=1
     - php: 5.4
       env:
         - PHPCS=1

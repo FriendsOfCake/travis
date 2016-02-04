@@ -21,7 +21,7 @@ fi
 
 EXIT_CODE=0
 
-if [ "$COVERAGE" == 1 ]; then
+if [ "$CODECOVERAGE" == 1 ]; then
     ./Console/cake test $PLUGIN_NAME All$PLUGIN_NAME --stderr --coverage-clover clover.xml
     EXIT_CODE="$?"
 elif [ -z "$FOC_VALIDATE" ]; then
