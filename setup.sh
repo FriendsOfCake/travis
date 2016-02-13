@@ -36,7 +36,7 @@ fi
 
 CYAN="\033[0;36m"
 NO_COLOUR="\033[0m"
-echo -e "${CYAN}Remember to setup your plugin on https://coveralls.io/ for coverage tracking${NO_COLOUR}"
+echo -e "${CYAN}Remember to setup your plugin on https://codecov.io/ for coverage tracking${NO_COLOUR}"
 echo -e ""
 echo -e "${CYAN}Make sure you have the http://travis-ci.org webhook enabled in github for your plugin${NO_COLOUR}"
 echo -e ""

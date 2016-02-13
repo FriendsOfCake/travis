@@ -73,10 +73,6 @@ for dep in $REQUIRE; do
     composer require --no-interaction --prefer-source $dep;
 done
 
-if [ "$COVERALLS" = '1' ]; then
-	composer require satooshi/php-coveralls:dev-master
-fi
-
 if [ "$PHPCS" != '1' ]; then
 	composer global require 'phpunit/phpunit=3.7.38'
 	ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
@@ -100,7 +96,3 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     </whitelist>
 </filter>
 </phpunit>" > phpunit.xml
-
-echo "# for php-coveralls
-coverage_clover: build/logs/clover.xml
-json_path: build/logs/coveralls-upload.json" > .coveralls.yml
