@@ -13,7 +13,7 @@ fi
 #
 latest_ref() {
 	# Get version from master branch
-	MASTER=$(curl --silent https://raw.github.com/cakephp/cakephp/master/lib/Cake/VERSION.txt)
+	MASTER=$(curl --silent https://raw.githubusercontent.com/cakephp/cakephp/2.x/lib/Cake/VERSION.txt)
 	MASTER=$(echo "$MASTER" | tail -1 | grep -Ei "^$CAKE_VERSION\.")
 	if [ -n "$MASTER" ]; then
 		echo "master"
