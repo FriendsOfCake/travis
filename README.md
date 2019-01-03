@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/FriendsOfCake/travis.png?branch=master)](https://travis-ci.org/FriendsOfCake/travis)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 
-# Easy travis setup for CakePHP plugins
+# Easy Travis setup for CakePHP plugins
 
 This repository helps easy travis integration for CakePHP plugins, primarily focused on FriendsOfCake projects, but can be used within any plugin when satisfying the requirements.
+
+This branch is for CakePHP 2.x plugins.
 
 ## Description
 
