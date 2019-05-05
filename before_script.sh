@@ -75,7 +75,7 @@ done
 
 if [ "$PHPCS" != '1' ]; then
 	composer global require 'phpunit/phpunit=3.7.38'
-	ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
+	ln -s ~/.config/composer/vendor/phpunit/phpunit/PHPUnit ./Vendor/PHPUnit
 fi
 
 phpenv rehash
